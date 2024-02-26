@@ -4,10 +4,11 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { testPropertySelector } from './state/global/global.selector';
 import { testAction } from './state/global/global.action';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule,HttpClientModule],
   selector: 'azamon-store-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
