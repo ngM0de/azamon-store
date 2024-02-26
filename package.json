@@ -2,7 +2,9 @@
   "name": "@azamon-store/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "jsonServer": "json-server apps/front/db.json"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.1.0",
@@ -19,6 +21,7 @@
     "@ngrx/store": "^17.1.1",
     "@ngrx/store-devtools": "^17.1.1",
     "@nx/angular": "17.3.0",
+    "json-server": "^1.0.0-alpha.23",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
