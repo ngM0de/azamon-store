@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'azamon-store-navigation',
+  selector: 'azamon-store-logo',
   standalone: true,
   imports: [],
-  templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.scss',
+  templateUrl: './logo.component.html',
+  styleUrl: './logo.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavigationComponent {
+export class LogoComponent {
 
 }
