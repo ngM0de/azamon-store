@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavigationComponent } from '../../navigation/navigation.component';
 import { MainComponent } from '../../main/main.component';
 import { FooterComponent } from '../../footer/footer.component';
+import { CategoriesComponent } from '../../navigation/components/categories/categories.component';
 
 @Component({
   selector: 'azamon-store-home',
@@ -9,7 +10,8 @@ import { FooterComponent } from '../../footer/footer.component';
   imports: [
     NavigationComponent,
     MainComponent,
-    FooterComponent
+    FooterComponent,
+    CategoriesComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
