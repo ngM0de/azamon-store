@@ -1,1 +1,21 @@
-<p>search-autocomplete works!</p>
+<form class="flex justify-around items-center">
+
+  <mat-form-field class="example-full-width"
+                  subscriptSizing="dynamic"
+                  appearance="outline">
+    <input type="text"
+           placeholder="Pick one"
+           matInput
+           [formControl]="searchControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      @for (option of options$ | async; track option.id) {
+        <mat-option [value]="option.name">{{ option.name }}</mat-option>
+      }
+    </mat-autocomplete>
+    <button matSuffix mat-icon-button (click)="fetchFilteredProducts(searchControl.value ?? '')">
+      <mat-icon>search</mat-icon>
+    </button>
+
+  </mat-form-field>
+</form>
