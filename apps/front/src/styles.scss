@@ -3,6 +3,7 @@
 // For more information: https://material.angular.io/guide/theming
 @use 'reset' as reset;
 @use '@angular/material' as mat;
+@use 'global' as global;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

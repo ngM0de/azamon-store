@@ -8,8 +8,9 @@ for (let i = 0; i <= 50; i++) {
     image: `"/assets/images/${res[Math.floor(Math.random() * 5)]}"`,
     name: faker.commerce.productName(),
     description: faker.commerce.productDescription(),
-    price: faker.commerce.price({ min: 100, max: 1000 }),
-    type: Math.floor(Math.random() * 4)
+    price: faker.commerce.price({ min: 0, max: 1500 }),
+    type: Math.floor(Math.random() * 4),
+    rating: Math.floor(Math.random() * 5)
   };
 
   result.push(JSON.stringify(obj));

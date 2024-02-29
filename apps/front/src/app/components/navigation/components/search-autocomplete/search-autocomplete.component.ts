@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule, MatAutocompleteTrigger } from '@angular/material/autocomplete';
-import { debounceTime, filter, Subject, take } from 'rxjs';
+import { debounceTime, Subject, take } from 'rxjs';
 import { ProductModel } from '../../../../models/product.model';
 import { MatInputModule } from '@angular/material/input';
 import { AsyncPipe } from '@angular/common';
@@ -48,11 +48,11 @@ export class SearchAutocompleteComponent implements OnInit {
 
   private subscribeToControlChanges(): void {
     this.searchControl.valueChanges
-      .pipe(filter(Boolean), debounceTime(500))
+      .pipe(debounceTime(500))
       .subscribe(this.fetchFilteredProducts.bind(this));
   }
 
-  public fetchFilteredProducts(name: string): void {
+  public fetchFilteredProducts(name: string | null): void {
     this.httpService.getFilteredProductsByName(name ?? '')
       .pipe(take(1))
       .subscribe(products => this.options$.next(products));

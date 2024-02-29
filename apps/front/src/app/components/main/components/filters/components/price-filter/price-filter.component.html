@@ -1,0 +1,21 @@
+<mat-selection-list [(ngModel)]="selectedOptions" (selectionChange)="syncSliderWithRadioButtons($event)">
+  <mat-label class="h-label">Price</mat-label>
+  @for (price of prices; track price.max) {
+    <mat-list-option color="primary" [value]="price">
+      {{ price | appCurrency }}
+    </mat-list-option>
+  }
+</mat-selection-list>
+
+<form class="flex gap-3" [formGroup]="priceGroup">
+  <mat-form-field floatLabel="always">
+    <mat-label>Min</mat-label>
+    <input matInput formControlName="min" type="number">
+    <span matTextPrefix>$&nbsp;</span>
+  </mat-form-field>
+  <mat-form-field floatLabel="always">
+    <mat-label>Max</mat-label>
+    <input matInput formControlName="max" type="number">
+    <span matTextPrefix>$&nbsp;</span>
+  </mat-form-field>
+</form>

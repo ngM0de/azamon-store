@@ -1,0 +1,14 @@
+.h-label {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.mdc-list-item.mdc-list-item--with-one-line {
+  height: unset!important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

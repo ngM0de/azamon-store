@@ -4,12 +4,14 @@ export interface ProductModel {
   image: string;
   price: number;
   description: string;
+  rating: number;
   type: ProductType
 }
 
 export enum ProductType {
-  'Electronics',
-  'Food',
-  'Apparels',
-  'Clothes'
+  'TVs',
+  'Appliances',
+  'Phones',
+  'Video Games',
+  'All'
 }

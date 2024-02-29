@@ -1,3 +1,27 @@
-<aside class="filters">
-filters
-</aside>
+@if (filtersOptions$ | async; as options) {
+  <aside class="filters">
+
+    <azamon-store-type-filter
+      [control]="filtersFormGroup.controls['type']"
+      [types]="options['types']">
+    </azamon-store-type-filter>
+
+
+    <azamon-store-rating-filter
+      [control]="filtersFormGroup.controls['rating']"
+      [ratings]="options['ratings']">
+    </azamon-store-rating-filter>
+
+
+    <azamon-store-price-filter
+      [priceGroup]="filtersFormGroup.controls['price']"
+      [prices]="options['prices']">
+    </azamon-store-price-filter>
+
+  </aside>
+}
+
+
+<ng-template #empty>
+  <li>No options to select</li>
+</ng-template>

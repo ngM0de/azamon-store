@@ -1,0 +1,11 @@
+.ngx-slider .ngx-slider-pointer {
+  &:after {
+    background-color: white!important;
+  }
+  border: none!important;
+  background-color: #3D4EAE!important;
+}
+
+.ngx-slider-span  .ngx-slider-selection{
+  background: black!important;
+}

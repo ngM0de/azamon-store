@@ -1,4 +1,7 @@
+import { FilterSettings, FilterOptions } from '../../models/utility.model';
+
 export interface GlobalState {
-  testProperty: string;
+  filterSettings: FilterSettings;
   paginationLimit: number;
+  filterOptions: FilterOptions
 }

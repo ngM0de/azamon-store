@@ -1,0 +1,8 @@
+<mat-selection-list class="ratings">
+  <mat-label class="h-label">Rating</mat-label>
+  @for (rating of ratings; track rating) {
+    <mat-list-option color="primary">
+      <azamon-store-rating-row [rating]="rating"></azamon-store-rating-row>
+    </mat-list-option>
+  }
+</mat-selection-list>
