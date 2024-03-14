@@ -1,28 +1,35 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
-import { selectFilterOptions } from '../../../../state/global/global.selector';
+import { selectFilterOptions } from '@state/global/global.selector';
+import { setFilterOptions } from '@state/global/global.action';
 import { Store } from '@ngrx/store';
-import { FilterOptions } from '../../../../models/utility.model';
-import { setFilterOptions } from '../../../../state/global/global.action';
+import { FilterOptions } from '@models/utility.model';
 import { MatListOption, MatSelectionList } from '@angular/material/list';
-import { RatingRowComponent } from '../../../shared/rating-row/rating-row.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { AppCurrencyPipe } from '../../../shared/pipes/appCurrency.pipe';
 import { PriceFilterComponent } from './components/price-filter/price-filter.component';
 import { TypeFilterComponent } from './components/type-filter/type-filter.component';
 import { RatingFilterComponent } from './components/rating-filter/rating-filter.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { FiltersFormGroupModel } from './filters.model';
-import { ProductType } from '../../../../models/product.model';
-import {
-  AbstractToFormControlPipe
-} from '../../../shared/pipes/abstract-to-form-control/abstract-to-form-control.pipe';
+import { ProductType } from '@models/product.model';
+import { RatingRowComponent } from '@shared/components/rating-row/rating-row.component';
+import { AppCurrencyPipe } from '@shared/pipes/currency/appCurrency.pipe';
 
 @Component({
   selector: 'azamon-store-filters',
   standalone: true,
-  imports: [CommonModule, MatSelectionList, MatListOption, RatingRowComponent, MatFormFieldModule, AppCurrencyPipe, PriceFilterComponent, TypeFilterComponent, RatingFilterComponent, AbstractToFormControlPipe],
+  imports: [
+    CommonModule,
+    MatSelectionList,
+    MatListOption,
+    RatingRowComponent,
+    MatFormFieldModule,
+    AppCurrencyPipe,
+    PriceFilterComponent,
+    TypeFilterComponent,
+    RatingFilterComponent
+  ],
   templateUrl: './filters.component.html',
   styleUrl: './filters.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

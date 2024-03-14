@@ -24,7 +24,13 @@
       ],
       "@services/*": [
         "app/services/*"
-      ]
+      ],
+      "@shared/*": [
+        "app/shared/*"
+      ],
+      "@pages/*": [
+        "app/pages/*"
+      ],
     }
   },
   "files": [],

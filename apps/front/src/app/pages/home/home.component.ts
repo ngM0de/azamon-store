@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { NavigationComponent } from '../../navigation/navigation.component';
-import { MainComponent } from '../../main/main.component';
-import { FooterComponent } from '../../footer/footer.component';
-import { CategoriesComponent } from '../../navigation/components/categories/categories.component';
+import { NavigationComponent } from '@components/navigation/navigation.component';
+import { MainComponent } from '@components/main/main.component';
+import { FooterComponent } from '@components/footer/footer.component';
+import { CategoriesComponent } from '@components/navigation/components/categories/categories.component';
 import { Store } from '@ngrx/store';
-import { setFilterOptions } from '../../../state/global/global.action';
-import { ProductType } from '../../../models/product.model';
-import { PriceRangeModel } from '../../../models/utility.model';
+import { PriceRangeModel } from '@models/utility.model';
+import { setFilterOptions } from '@state/global/global.action';
+import { ProductType } from '@models/product.model';
+
 
 @Component({
   selector: 'azamon-store-home',

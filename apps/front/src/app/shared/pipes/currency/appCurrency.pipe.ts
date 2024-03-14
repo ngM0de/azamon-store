@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { PriceRangeModel } from '../../../models/utility.model';
+import { PriceRangeModel } from '@models/utility.model';
 
 @Pipe({
   name: 'appCurrency',

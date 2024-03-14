@@ -1,16 +1,16 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { filter, Observable, Subject, take, takeUntil } from 'rxjs';
-import { FilterOptions, PriceRangeModel } from '../../../../../../models/utility.model';
-import { selectFilterOptions } from '../../../../../../state/global/global.selector';
+import { FilterOptions, PriceRangeModel } from '@models/utility.model';
+import { selectFilterOptions } from '@state/global/global.selector';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatListOption, MatSelectionList, MatSelectionListChange } from '@angular/material/list';
+import { MatListOption, MatSelectionList } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { AppCurrencyPipe } from '../../../../../shared/pipes/appCurrency.pipe';
 import { MatInput } from '@angular/material/input';
 import { PriceGroup, PriceGroupValue } from '../../filters.model';
 import { AsyncPipe } from '@angular/common';
 import { MatCheckbox } from '@angular/material/checkbox';
+import { AppCurrencyPipe } from '@shared/pipes/currency/appCurrency.pipe';
 
 @Component({
   selector: 'azamon-store-price-filter',

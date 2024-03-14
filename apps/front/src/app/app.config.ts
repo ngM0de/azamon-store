@@ -4,8 +4,8 @@ import { appRoutes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { global } from './state/global/global';
-import { AppState } from './state/appState';
+import { global } from '@state/global/global';
+import { AppState } from '@state/appState';
 import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
