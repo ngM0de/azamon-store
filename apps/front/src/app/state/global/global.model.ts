@@ -1,7 +1,8 @@
 import { FilterSettings, FilterOptions } from '../../models/utility.model';
+import { ProductModel } from '../../models/product.model';
 
 export interface GlobalState {
   filterSettings: FilterSettings;
-  paginationLimit: number;
+  products: ProductModel[];
   filterOptions: FilterOptions
 }

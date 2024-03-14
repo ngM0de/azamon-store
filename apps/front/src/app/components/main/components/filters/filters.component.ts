@@ -36,8 +36,6 @@ export class FiltersComponent implements OnInit {
 
   ngOnInit() {
     this.initializeFormGroup();
-    this.filtersFormGroup.valueChanges.subscribe(console.log);
-    this.filtersOptions$.subscribe(console.log);
   }
 
   private initializeFormGroup(): void {
@@ -49,7 +47,7 @@ export class FiltersComponent implements OnInit {
     });
   }
 
-  public filterBy(filter: keyof FilterOptions, value: any): void {
+  public filterBy(filter: keyof FilterOptions, value: unknown): void {
     this.store.dispatch(setFilterOptions({ filterOptions: { [filter]: value } }));
   }
 }

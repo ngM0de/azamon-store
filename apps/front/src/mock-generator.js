@@ -16,6 +16,6 @@ for (let i = 0; i <= 50; i++) {
   result.push(JSON.stringify(obj));
 }
 
-for (let r of result) {
-  console.log(r.replaceAll(/'|\\"/g, '') + ',');
-}
+// for (let r of result) {
+  // console.log(r.replaceAll(/'|\\"/g, '') + ',');
+// }

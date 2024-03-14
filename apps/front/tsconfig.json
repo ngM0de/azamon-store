@@ -9,7 +9,23 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "strictPropertyInitialization": false,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "baseUrl": "./src",
+    "paths": {
+      "@models/*": [
+        "app/models/*"
+      ],
+      "@state/*": [
+        "app/state/*"
+      ],
+      "@components/*": [
+        "app/components/*"
+      ],
+      "@services/*": [
+        "app/services/*"
+      ]
+    }
   },
   "files": [],
   "include": [],

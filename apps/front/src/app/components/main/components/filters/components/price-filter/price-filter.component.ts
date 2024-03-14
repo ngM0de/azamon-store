@@ -4,7 +4,7 @@ import { filter, Observable, Subject, take, takeUntil } from 'rxjs';
 import { FilterOptions, PriceRangeModel } from '../../../../../../models/utility.model';
 import { selectFilterOptions } from '../../../../../../state/global/global.selector';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatListOption, MatSelectionList } from '@angular/material/list';
+import { MatListOption, MatSelectionList, MatSelectionListChange } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppCurrencyPipe } from '../../../../../shared/pipes/appCurrency.pipe';
 import { MatInput } from '@angular/material/input';
@@ -45,12 +45,13 @@ export class PriceFilterComponent implements OnInit {
     this.priceGroup.valueChanges.pipe(filter(Boolean), takeUntil(this.unsubscribeAll$)).subscribe();
     this.filterOptions$.pipe(take(1)).subscribe(({ prices }) => {
       this.priceGroup.get('min')?.setValue(0);
-      this.priceGroup.get('max')?.setValue(prices[prices.length - 1].max / 2 ?? 0);
+      this.priceGroup.get('max')?.setValue(prices[prices.length - 1].max / 2);
     });
 
   }
 
   public syncSliderWithRadioButtons(event: any) {
+    console.log(event);
     const source = event.source._value;
     if (source?.length) {
       this.priceGroup.get('min')?.setValue(+source[0].min);
