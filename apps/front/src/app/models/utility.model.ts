@@ -1,6 +1,6 @@
 import { ProductType } from './product.model';
 
-export interface FilterSettings {
+export interface FilteredBy {
   name: string | null;
   price: number | null;
   type: ProductType | null;

@@ -1,9 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
-import { selectFilterOptions } from '@state/global/global.selector';
-import { setFilterOptions } from '@state/global/global.action';
-import { Store } from '@ngrx/store';
 import { FilterOptions } from '@models/utility.model';
 import { MatListOption, MatSelectionList } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -15,6 +12,7 @@ import { FiltersFormGroupModel } from './filters.model';
 import { ProductType } from '@models/product.model';
 import { RatingRowComponent } from '@shared/components/rating-row/rating-row.component';
 import { AppCurrencyPipe } from '@shared/pipes/currency/appCurrency.pipe';
+import { HomeStoreFacade } from '@pages/home/services/homeStore/home-store-facade.service';
 
 @Component({
   selector: 'azamon-store-filters',
@@ -35,10 +33,10 @@ import { AppCurrencyPipe } from '@shared/pipes/currency/appCurrency.pipe';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FiltersComponent implements OnInit {
-  public filtersOptions$: Observable<FilterOptions> = this.store.select(selectFilterOptions);
+  public filtersOptions$: Observable<FilterOptions> = this.homeStoreFacade.filterOptions$;
   public filtersFormGroup: FormGroup<FiltersFormGroupModel>;
 
-  constructor(private store: Store, private fb: FormBuilder) {
+  constructor(private homeStoreFacade: HomeStoreFacade, private fb: FormBuilder) {
   }
 
   ngOnInit() {
@@ -55,6 +53,6 @@ export class FiltersComponent implements OnInit {
   }
 
   public filterBy(filter: keyof FilterOptions, value: unknown): void {
-    this.store.dispatch(setFilterOptions({ filterOptions: { [filter]: value } }));
+    this.homeStoreFacade.setFilterOptions({ [filter]: value })
   }
 }

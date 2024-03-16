@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation } 
 import { Store } from '@ngrx/store';
 import { filter, Observable, Subject, take, takeUntil } from 'rxjs';
 import { FilterOptions, PriceRangeModel } from '@models/utility.model';
-import { selectFilterOptions } from '@state/global/global.selector';
+import { selectFilterOptions } from '@state/global.selector';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatListOption, MatSelectionList } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';

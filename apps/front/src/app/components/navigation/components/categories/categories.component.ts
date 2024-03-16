@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ProductType } from '../../../../models/product.model';
+import { ProductType } from '@models/product.model';
 
 @Component({
   selector: 'azamon-store-categories',

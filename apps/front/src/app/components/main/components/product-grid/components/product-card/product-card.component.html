@@ -1,1 +1,7 @@
-<p>product-card works!</p>
+<div class="card">
+  <img [src]="product.image" alt="product-image">
+  <div class="description flex flex-col items-center justify-center">
+    <div>{{product.name}}</div>
+    <azamon-store-rating-row [rating]="product.rating"></azamon-store-rating-row>
+  </div>
+</div>

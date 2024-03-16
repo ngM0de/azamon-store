@@ -1,21 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { selectProducts } from '../../../../state/global/global.selector';
+import {
+  ProductCardComponent
+} from '@components/main/components/product-grid/components/product-card/product-card.component';
+import { AsyncPipe } from '@angular/common';
+import { HomeStoreFacade } from '@pages/home/services/homeStore/home-store-facade.service';
 
 @Component({
   selector: 'azamon-store-product-grid',
   standalone: true,
-  imports: [],
+  imports: [
+    ProductCardComponent,
+    AsyncPipe
+  ],
   templateUrl: './product-grid.component.html',
   styleUrl: './product-grid.component.scss'
 })
-export class ProductGridComponent implements OnInit{
-  public products$ = this.store.select(selectProducts)
-  constructor(private store: Store) {
+export class ProductGridComponent implements OnInit {
+  public products$ = this.homeStoreFacade.products$;
+
+  constructor(private homeStoreFacade: HomeStoreFacade) {
 
   }
 
   ngOnInit() {
-    this.products$.subscribe(console.log)
+    console.log(`to prevent errors`);
   }
 }

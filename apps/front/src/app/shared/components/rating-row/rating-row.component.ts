@@ -12,7 +12,7 @@ import { MatIcon } from '@angular/material/icon';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RatingRowComponent implements OnInit {
-  @Input() rating: number;
+  @Input({required: true}) rating: number;
   public starsRow: number[];
 
   ngOnInit() {

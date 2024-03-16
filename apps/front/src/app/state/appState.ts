@@ -1,4 +1,4 @@
-import { GlobalState } from './global/global.model';
+import { GlobalState } from './global.model';
 
 export interface AppState {
   global: GlobalState

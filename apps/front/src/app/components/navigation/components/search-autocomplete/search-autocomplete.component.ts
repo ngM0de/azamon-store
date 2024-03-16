@@ -3,7 +3,7 @@ import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule, MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { debounceTime, Subject, take } from 'rxjs';
-import { ProductModel } from '../../../../models/product.model';
+import { Product } from '@models/product.model';
 import { MatInputModule } from '@angular/material/input';
 import { AsyncPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -33,14 +33,14 @@ import { HttpService } from '../../../../services/http/http.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchAutocompleteComponent implements OnInit {
-  public options$: Subject<ProductModel[]>;
+  public options$: Subject<Product[]>;
   public searchControl = new FormControl<string>('');
 
   constructor(private httpService: HttpService) {
   }
 
   ngOnInit() {
-    this.options$ = new Subject<ProductModel[]>();
+    this.options$ = new Subject<Product[]>();
     this.fetchFilteredProducts('');
     this.subscribeToControlChanges();
   }

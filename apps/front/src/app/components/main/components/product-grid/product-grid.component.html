@@ -1,2 +1,7 @@
-<aside class="product-grid">
-</aside>
+@if (products$ | async;as products) {
+  <aside class="product-grid">
+    @for (product of products; track product.id) {
+      <azamon-store-product-card class="flex justify-center" [product]="product"></azamon-store-product-card>
+    }
+  </aside>
+}
