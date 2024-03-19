@@ -7,7 +7,7 @@ import { selectFilterBy, selectFilterOptions, selectProducts } from '@state/glob
 import { setFilterOptions } from '@state/global.action';
 
 @Injectable()
-export class HomeStoreFacade {
+export class HomeStoreService {
   #store = inject(Store);
 
   get products$(): Observable<Product[]> {

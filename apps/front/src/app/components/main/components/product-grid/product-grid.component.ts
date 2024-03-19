@@ -3,7 +3,7 @@ import {
   ProductCardComponent
 } from '@components/main/components/product-grid/components/product-card/product-card.component';
 import { AsyncPipe } from '@angular/common';
-import { HomeStoreFacade } from '@pages/home/services/homeStore/home-store-facade.service';
+import { HomeStoreService } from '@pages/home/services/homeStore/home-store-facade.service';
 
 @Component({
   selector: 'azamon-store-product-grid',
@@ -18,7 +18,7 @@ import { HomeStoreFacade } from '@pages/home/services/homeStore/home-store-facad
 export class ProductGridComponent implements OnInit {
   public products$ = this.homeStoreFacade.products$;
 
-  constructor(private homeStoreFacade: HomeStoreFacade) {
+  constructor(private homeStoreFacade: HomeStoreService) {
 
   }
 

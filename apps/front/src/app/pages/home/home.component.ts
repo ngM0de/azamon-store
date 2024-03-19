@@ -3,7 +3,7 @@ import { NavigationComponent } from '@components/navigation/navigation.component
 import { MainComponent } from '@components/main/main.component';
 import { FooterComponent } from '@components/footer/footer.component';
 import { CategoriesComponent } from '@components/navigation/components/categories/categories.component';
-import { HomeStoreFacade } from '@pages/home/services/homeStore/home-store-facade.service';
+import { HomeStoreService } from '@pages/home/services/homeStore/home-store-facade.service';
 import { FiltersService } from '@components/main/components/filters/services/filters/filters.service';
 
 
@@ -16,7 +16,7 @@ import { FiltersService } from '@components/main/components/filters/services/fil
     FooterComponent,
     CategoriesComponent
   ],
-  providers: [HomeStoreFacade, FiltersService],
+  providers: [HomeStoreService, FiltersService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

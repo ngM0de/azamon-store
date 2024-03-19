@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { PriceRangeModel } from '@models/utility.model';
 import { ProductType } from '@models/product.model';
-import { HomeStoreFacade } from '@pages/home/services/homeStore/home-store-facade.service';
+import { HomeStoreService } from '@pages/home/services/homeStore/home-store-facade.service';
 
 @Injectable()
 export class FiltersService {
 
-  constructor(private homeStoreFacade: HomeStoreFacade) {
+  constructor(private homeStoreFacade: HomeStoreService) {
   }
 
   public setupInitialState(): void {
