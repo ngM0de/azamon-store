@@ -14,5 +14,4 @@ import { ProductGridComponent } from './components/product-grid/product-grid.com
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainComponent {
-
 }

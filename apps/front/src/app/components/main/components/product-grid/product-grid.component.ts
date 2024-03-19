@@ -16,13 +16,14 @@ import { HomeStoreService } from '@pages/home/services/homeStore/home-store-faca
   styleUrl: './product-grid.component.scss'
 })
 export class ProductGridComponent implements OnInit {
-  public products$ = this.homeStoreFacade.products$;
+  public products$ = this.homeStore.products$;
 
-  constructor(private homeStoreFacade: HomeStoreService) {
+  constructor(private homeStore: HomeStoreService) {
 
   }
 
   ngOnInit() {
+    this.products$.subscribe(console.log)
     console.log(`to prevent errors`);
   }
 }

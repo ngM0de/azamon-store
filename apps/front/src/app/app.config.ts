@@ -4,16 +4,16 @@ import { appRoutes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { global } from '@state/global';
-import { AppState } from '@state/appState';
+import { globalReducer } from '@state/global.reducer';
 import { provideHttpClient } from '@angular/common/http';
+import { AppStateModel } from '@state/global.model';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(appRoutes),
     provideAnimationsAsync(),
     provideHttpClient(),
-    provideStore<AppState>({ global },{}),
+    provideStore<AppStateModel>({ global: globalReducer },{}),
     provideStoreDevtools({
       maxAge: 25,
       logOnly: !isDevMode()

@@ -6,14 +6,14 @@ import { HomeStoreService } from '@pages/home/services/homeStore/home-store-faca
 @Injectable()
 export class FiltersService {
 
-  constructor(private homeStoreFacade: HomeStoreService) {
+  constructor(private store: HomeStoreService) {
   }
 
   public setupInitialState(): void {
     const types = this.getTypesFilterData();
     const prices: PriceRangeModel[] = this.getPricesFilterData();
     const ratings = this.getRatingsFilterData();
-    this.homeStoreFacade.setFilterOptions({ types, prices, ratings });
+    this.store.setFilterOptions({ types, prices, ratings });
   }
 
 

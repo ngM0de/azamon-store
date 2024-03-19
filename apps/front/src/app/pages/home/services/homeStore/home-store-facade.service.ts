@@ -4,10 +4,14 @@ import { Observable } from 'rxjs';
 import { Product } from '@models/product.model';
 import { FilteredBy, FilterOptions } from '@models/utility.model';
 import { selectFilterBy, selectFilterOptions, selectProducts } from '@state/global.selector';
-import { setFilterOptions } from '@state/global.action';
+import { setFilterOptions, setProducts } from '@state/global.action';
+import { HttpService } from '@services/http/http.service';
 
 @Injectable()
 export class HomeStoreService {
+  constructor(private http: HttpService) {
+  }
+
   #store = inject(Store);
 
   get products$(): Observable<Product[]> {
@@ -24,6 +28,10 @@ export class HomeStoreService {
 
   public setFilterOptions(filterOptions: Partial<FilterOptions>): void {
     this.#store.dispatch(setFilterOptions({ filterOptions }));
+  }
+
+  public setProducts(products: Product[]): void {
+    this.#store.dispatch(setProducts({ products }));
   }
 
 }

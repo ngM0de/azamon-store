@@ -8,7 +8,7 @@ const initialState: GlobalState = {
   filteredBy: { name: null, price: null, type: ProductType.All, rating: null },
   filterOptions: { prices: [], types: [], ratings: [] }
 };
-export const global = createReducer(initialState,
+export const globalReducer = createReducer(initialState,
   on(setFilterOptions, (state, action): GlobalState => ({
     ...state,
     filterOptions: { ...state.filterOptions, ...action.filterOptions }
